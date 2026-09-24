@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Removed `Ctrl+J` as a default binding for `tui.input.newLine`; `Shift+Enter` is now the only default newline key.
+
 ### Fixed
 
 - Fixed `/skill` autocomplete appearing empty when loaded skill names did not contain the letters in `skill` ([#9944](https://github.com/earendil-works/pi/issues/9944)).

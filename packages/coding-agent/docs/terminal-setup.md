@@ -60,7 +60,7 @@ Older Claude Code configurations may contain:
 keybind = shift+enter=text:\n
 ```
 
-This sends a raw linefeed, which Pi cannot distinguish from `Ctrl+J`. Remove the mapping if an older Claude Code installation is the only reason you added it. Pi already binds `Ctrl+J` as a newline alternative, so the mapping may appear to work while still preventing Pi and tmux from receiving a real `Shift+Enter` event.
+This sends a raw linefeed. Pi inserts a newline for a lone linefeed, so the mapping may appear to work, but it prevents Pi and tmux from receiving a real `Shift+Enter` event. Prefer the terminal's native `Shift+Enter` support and remove this mapping unless an older Claude Code installation still needs it.
 
 ### Open links in fullscreen mode
 
@@ -195,7 +195,7 @@ Use a terminal with modern extended-key support when you need those shortcuts, s
 
 ## IntelliJ IDEA integrated terminal
 
-IntelliJ IDEA's built-in terminal cannot reliably distinguish `Shift+Enter` from plain `Enter`. Use `Ctrl+J` for a newline or run Pi in a terminal with modern extended-key support.
+IntelliJ IDEA's built-in terminal cannot reliably distinguish `Shift+Enter` from plain `Enter`. Run Pi in a terminal with modern extended-key support, or assign a newline key this terminal can send in `keybindings.json`.
 
 If an IME candidate window does not follow the text cursor, show the hardware cursor:
 

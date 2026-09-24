@@ -84,7 +84,7 @@ The dedicated history actions browse prompt history regardless of cursor positio
 
 | Keybinding id | Default | Description |
 |---|---|---|
-| `tui.input.newLine` | `shift+enter`, `ctrl+j` | Insert new line |
+| `tui.input.newLine` | `shift+enter` | Insert new line |
 | `tui.input.submit` | `enter` | Submit input |
 | `tui.input.tab` | `tab` | Tab or autocomplete |
 | `tui.input.copy` | `ctrl+c` | Copy selection |

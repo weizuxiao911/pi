@@ -3,12 +3,13 @@ import { describe, it } from "node:test";
 import { KeybindingsManager, TUI_KEYBINDINGS } from "../src/keybindings.ts";
 
 describe("KeybindingsManager", () => {
-	it("binds Ctrl+J as a default newline alias", () => {
+	it("binds Shift+Enter as the default newline", () => {
 		const keybindings = new KeybindingsManager(TUI_KEYBINDINGS);
 
-		assert.deepStrictEqual(keybindings.getKeys("tui.input.newLine"), ["shift+enter", "ctrl+j"]);
-		assert.strictEqual(keybindings.matches("\n", "tui.input.newLine"), true);
-		assert.strictEqual(keybindings.matches("\x1b[106;5u", "tui.input.newLine"), true);
+		assert.deepStrictEqual(keybindings.getKeys("tui.input.newLine"), ["shift+enter"]);
+		assert.strictEqual(keybindings.matches("\x1b[13;2u", "tui.input.newLine"), true);
+		assert.strictEqual(keybindings.matches("\n", "tui.input.newLine"), false);
+		assert.strictEqual(keybindings.matches("\x1b[106;5u", "tui.input.newLine"), false);
 	});
 
 	it("binds modified and unmodified editor viewport navigation", () => {

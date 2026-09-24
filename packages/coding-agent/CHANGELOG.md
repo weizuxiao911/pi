@@ -9,6 +9,10 @@
 - Added `types=chat,image,classifier` to pi.dev model catalog requests so remote refreshes overlay every supported model type; entries of unknown model types are ignored.
 - Added the `provider_stream_event` extension event for observing parsed provider events before normalization, with an opt-in `/debug-provider` example viewer ([#9784](https://github.com/earendil-works/pi/issues/9784)).
 
+### Changed
+
+- The editor's default newline key is now `Shift+Enter`; `Ctrl+J` is no longer bound to newline.
+
 ### Fixed
 
 - Prevented managed git packages from automatically installing Pi peer dependencies and added warnings for extension packages that list host-provided modules in `dependencies` ([#9863](https://github.com/earendil-works/pi/issues/9863)).
