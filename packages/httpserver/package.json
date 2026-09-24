@@ -1,0 +1,54 @@
+{
+	"name": "@earendil-works/pi-httpserver",
+	"version": "0.87.1",
+	"description": "HTTP + SSE API server exposing pi over a REST interface",
+	"type": "module",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		}
+	},
+	"bin": {
+		"pi-httpserver": "./dist/cli.js"
+	},
+	"files": [
+		"dist",
+		"README.md",
+		"CHANGELOG.md"
+	],
+	"scripts": {
+		"clean": "shx rm -rf dist",
+		"dev": "node src/cli.ts",
+		"dev:watch": "node --watch src/cli.ts",
+		"start": "node dist/cli.js",
+		"build": "tsgo -p tsconfig.build.json && shx chmod +x dist/cli.js",
+		"prepublishOnly": "npm run clean && npm run build"
+	},
+	"keywords": [
+		"pi",
+		"http",
+		"sse",
+		"server",
+		"api",
+		"rpc"
+	],
+	"author": "Earendil Works",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/earendil-works/pi.git",
+		"directory": "packages/httpserver"
+	},
+	"engines": {
+		"node": ">=22.19.0"
+	},
+	"dependencies": {
+		"@earendil-works/pi-coding-agent": "^0.87.1"
+	},
+	"devDependencies": {
+		"shx": "0.4.0"
+	}
+}
